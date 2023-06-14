@@ -25,9 +25,10 @@ app.get("/p/:pokemon_name", (req, res) => {
                     Defense: data[x].Defense,
                     SpAttack: data[x].SpAttack,
                     SpDefense: data[x].SpDefense,
-                    Speed: data[x].Speed
+                    Speed: data[x].Speed,
+                    imgURL: data[x].image.hires,
+                    description: data[x].description
                 }
-                console.log(typeof myPokemon)
                 pokemonFound = true;
                 res.render("pokemon.ejs", myPokemon);
                 break;
