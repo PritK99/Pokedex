@@ -7,10 +7,11 @@ app.set("view engine", "ejs")
 app.set("views", path.join(__dirname, "/views"))
 
 app.get("/", (req, res) => {
-    res.render("home")
-})
+    res.render("home");
+    return ;
+});
 
-app.get("/:pokemon_name", (req, res) => {
+app.get("/p/:pokemon_name", (req, res) => {
     const { pokemon_name } = req.params;
     if (pokemon_name) {
         let pokemonFound = false;
@@ -19,7 +20,7 @@ app.get("/:pokemon_name", (req, res) => {
                 const myPokemon = data[x];
                 pokemonFound = true;
                 res.render("pokemon", { myPokemon });
-                break; // Add this line to exit the loop upon finding a match
+                break;
             }
         }
         if (!pokemonFound) {
@@ -27,7 +28,9 @@ app.get("/:pokemon_name", (req, res) => {
             res.render("notFound", { pokemon_name });
         }
     }
+    return ;
 });
+
 
 app.get("*", () => {
     res.send("Pokedex not working")
