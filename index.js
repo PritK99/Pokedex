@@ -8,7 +8,7 @@ app.set("views", path.join(__dirname, "/views"))
 
 app.get("/", (req, res) => {
     res.render("home");
-    return ;
+    return;
 });
 
 app.get("/p/:pokemon_name", (req, res) => {
@@ -17,9 +17,19 @@ app.get("/p/:pokemon_name", (req, res) => {
         let pokemonFound = false;
         for (let x in data) {
             if (data[x].name.english.toUpperCase() === pokemon_name.toUpperCase()) {
-                const myPokemon = data[x];
+                const myPokemon = {
+                    name: data[x].name.english,
+                    type: data[x].type,
+                    HP: data[x].HP,
+                    Attack: data[x].Attack,
+                    Defense: data[x].Defense,
+                    SpAttack: data[x].SpAttack,
+                    SpDefense: data[x].SpDefense,
+                    Speed: data[x].Speed
+                }
+                console.log(typeof myPokemon)
                 pokemonFound = true;
-                res.render("pokemon", { myPokemon });
+                res.render("pokemon.ejs", myPokemon);
                 break;
             }
         }
@@ -28,7 +38,7 @@ app.get("/p/:pokemon_name", (req, res) => {
             res.render("notFound", { pokemon_name });
         }
     }
-    return ;
+    return;
 });
 
 
