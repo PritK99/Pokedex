@@ -1,13 +1,13 @@
-<div class="head">
+<div id = "Search">
   <h1 id: title>Pokedex</h1>
-
   <form id="Search">
-    <label for="input">Enter the name of pokemon:</label>
-    <input type="text" id="input" name="input" />
-    <input type="submit" value="Submit" />
+    <p><label for="input">Enter the name of pokemon:</label></p>
+    <input type="text" id="input" name="input">
+    <input type="submit" value="Submit">
   </form>
-
-  <script>
+</div>
+  
+<script>
     document
       .getElementById("Search")
       .addEventListener("submit", function (event) {
@@ -16,5 +16,4 @@
         var url = "/p/" + pName;
         window.location.href = url;
       });
-  </script>
-</div>
+</script>

@@ -1,3 +1,29 @@
 body {
-    background-color: blanchedalmond;
+    background-color: black;
+}
+
+.card {
+    border-width: 5 px;
+    border-color:blueviolet;
+    border-style:solid;
+}
+
+#pokemonImg {
+    margin-left:auto;  
+    margin-right:auto;  
+    display:block;
+    background-color: bisque; 
+}
+
+h1 {
+    color : white ;
+}
+
+p {
+    color : white ;
+}
+
+#pokemonText {
+    text-align: center;
+    font-family: Verdana, Tahoma, "Trebuchet MS", "DejuVu Sans", "Bitstream Vera Sans", sans-serif; 
 }
