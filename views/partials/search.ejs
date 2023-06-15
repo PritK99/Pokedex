@@ -1,0 +1,20 @@
+<div class="head">
+  <h1 id: title>Pokedex</h1>
+
+  <form id="Search">
+    <label for="input">Enter the name of pokemon:</label>
+    <input type="text" id="input" name="input" />
+    <input type="submit" value="Submit" />
+  </form>
+
+  <script>
+    document
+      .getElementById("Search")
+      .addEventListener("submit", function (event) {
+        event.preventDefault();
+        var pName = document.getElementById("input").value;
+        var url = "/p/" + pName;
+        window.location.href = url;
+      });
+  </script>
+</div>
