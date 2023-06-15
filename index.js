@@ -9,6 +9,7 @@ app.set("views", path.join(__dirname, "/views"))
 app.use(express.static(path.join(__dirname, "/public")))
 
 app.get("/", (req, res) => {
+    res.locals.title = "Home"
     res.render("home");
     return;
 });
@@ -19,6 +20,7 @@ app.get("/p/:pokemon_name", (req, res) => {
         let pokemonFound = false;
         for (let x in data) {
             if (data[x].name.english.toUpperCase() === pokemon_name.toUpperCase()) {
+                res.locals.title = data[x].name.english
                 const myPokemon = {
                     name: data[x].name.english,
                     type: data[x].type,
@@ -37,6 +39,7 @@ app.get("/p/:pokemon_name", (req, res) => {
             }
         }
         if (!pokemonFound) {
+            res.locals.title = "Not Found"
             console.log("Pokemon not found");
             res.render("notFound", { pokemon_name });
         }
@@ -46,6 +49,7 @@ app.get("/p/:pokemon_name", (req, res) => {
 
 
 app.get("*", (req, res) => {
+    res.locals.title = "Invalid URL"
     res.render("invalid")
 })
 
