@@ -6,6 +6,8 @@ const path = require('path')
 app.set("view engine", "ejs")
 app.set("views", path.join(__dirname, "/views"))
 
+app.use(express.static(path.join(__dirname, "/public")))
+
 app.get("/", (req, res) => {
     res.render("home");
     return;
@@ -43,8 +45,8 @@ app.get("/p/:pokemon_name", (req, res) => {
 });
 
 
-app.get("*", () => {
-    res.send("Pokedex not working")
+app.get("*", (req, res) => {
+    res.render("invalid")
 })
 
 app.listen(3000, () => {
