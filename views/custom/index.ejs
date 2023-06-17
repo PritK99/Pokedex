@@ -1,0 +1,19 @@
+<%- include("../partials/header.ejs") %>
+<%- include("../partials/search.ejs") %>
+
+<form action = "/" method = "post">
+    <label for = "name">Name</label>
+    <input type = "text" name = "englishname" id = "name">
+    <br>
+    <label for = "type">Type</label>
+    <input type = "text" name = "type" id = "type">
+    <br>
+    <label for = "description">Description</label>
+    <textarea id="description" name="description" rows="4" cols="50"></textarea>
+    <br>
+    <label for = "URL">URL</label>
+    <textarea id="URL" name="URL" rows="4" cols="50"></textarea>
+    <button>Submit</button>
+</form>
+
+<%- include("../partials/footer.ejs") %>

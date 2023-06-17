@@ -2,9 +2,9 @@
 
 ## TechStack
 
-* css
+* CSS
 * Javascript
-* Node JS
+* Node.JS
 * Express
 * Embedded Javascript
 
