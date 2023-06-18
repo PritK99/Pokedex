@@ -12,7 +12,8 @@ body {
     margin-left:auto;  
     margin-right:auto;  
     display:block;
-    background-color: bisque; 
+    width: 40;
+    height: 40;
 }
 
 h1 {

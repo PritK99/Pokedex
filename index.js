@@ -29,6 +29,7 @@ app.post("/", (req, res) => {
 
     const json = JSON.parse(file.toString());
     json.push({ name, type, description, image });
+    data.push({ name, type, description, image }) ;
     fs.writeFileSync("pokedex.json", JSON.stringify(json));
 
     res.send("Pokemon added")
@@ -44,7 +45,6 @@ app.get("/p/:pokemon_name", (req, res) => {
     if (pokemon_name) {
         let pokemonFound = false;
         for (let x in data) {
-            console.log(data[x].name.english.toUpperCase())
             if (data[x].name.english.toUpperCase() === pokemon_name.toUpperCase()) {
                 res.locals.title = data[x].name.english
                 const myPokemon = {
