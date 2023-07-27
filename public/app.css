@@ -1,5 +1,35 @@
+/* style for tag selectors */
 body {
-    background-color: black;
+    margin: 0;
+	font-family: 'Assistant', sans-serif;
+	background-color: #2A2738;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+    color: white;
+}
+
+/* style for others */
+
+.nav-choice{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.active{
+    border-bottom: 2px solid white;
+}
+
+.choices{
+    margin: 2px;
+    border: 1px solid red;
 }
 
 .card {
@@ -31,4 +61,21 @@ p {
 #pokemonText {
     text-align: center;
     font-family: Verdana, Tahoma, "Trebuchet MS", "DejuVu Sans", "Bitstream Vera Sans", sans-serif; 
+}
+
+input {
+    border-radius: 24px;
+    border: 1px solid #dfe1e5;
+    background: #fff;  
+    padding: 20px;
+    display: flex;
+    z-index: 3;
+    width: 638px;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+}
+
+input:hover{
+    box-shadow: 0 0 8px 1px #e1e1e1;
 }
